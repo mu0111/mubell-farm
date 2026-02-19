@@ -100,22 +100,59 @@
 
   window.addEventListener('scroll', updateActiveLink, { passive: true });
 
-  // --- Gallery Lightbox ---
+  // --- Global Lightbox (ALL images) ---
   var lightbox = document.querySelector('.lightbox');
   var lightboxImg = document.querySelector('.lightbox__img');
   var lightboxClose = document.querySelector('.lightbox__close');
   var lightboxPrev = document.querySelector('.lightbox__nav--prev');
   var lightboxNext = document.querySelector('.lightbox__nav--next');
-  var galleryItems = document.querySelectorAll('.gallery__item');
+
+  // Collect ALL content images (exclude nav, lightbox, form, icons, SVG placeholders)
+  var allImages = [];
+  document.querySelectorAll('img').forEach(function (img) {
+    // Skip images inside nav, lightbox, or form elements
+    if (img.closest('.nav, .lightbox, form, .nav__mobile')) return;
+    // Skip tiny images (icons, spacers) and SVG placeholders without data-src
+    if (img.width < 50 && img.height < 50 && !img.dataset.src) return;
+    // Skip images with src that's just a placeholder SVG and no data-src
+    if (!img.dataset.src && img.src.indexOf('data:image/svg') === 0) return;
+    allImages.push(img);
+  });
+
   var currentIndex = 0;
+
+  // Make all collected images clickable
+  allImages.forEach(function (img, index) {
+    img.style.cursor = 'pointer';
+    img.setAttribute('role', 'button');
+    img.setAttribute('tabindex', '0');
+
+    img.addEventListener('click', function (e) {
+      e.preventDefault();
+      e.stopPropagation();
+      openLightbox(index);
+    });
+
+    img.addEventListener('keydown', function (e) {
+      if (e.key === 'Enter' || e.key === ' ') {
+        e.preventDefault();
+        openLightbox(index);
+      }
+    });
+  });
+
+  function getImageSrc(img) {
+    return img.dataset.src || img.src;
+  }
 
   function openLightbox(index) {
     currentIndex = index;
-    var img = galleryItems[index].querySelector('img');
-    lightboxImg.src = img.dataset.src || img.src;
+    var img = allImages[index];
+    lightboxImg.src = getImageSrc(img);
     lightboxImg.alt = img.alt;
     lightbox.classList.add('active');
     document.body.style.overflow = 'hidden';
+    updateNavVisibility();
   }
 
   function closeLightbox() {
@@ -124,37 +161,38 @@
   }
 
   function navigateLightbox(direction) {
-    currentIndex = (currentIndex + direction + galleryItems.length) % galleryItems.length;
-    var img = galleryItems[currentIndex].querySelector('img');
-    lightboxImg.src = img.dataset.src || img.src;
-    lightboxImg.alt = img.alt;
+    currentIndex = (currentIndex + direction + allImages.length) % allImages.length;
+    var img = allImages[currentIndex];
+    // Smooth transition
+    lightboxImg.style.opacity = '0';
+    setTimeout(function () {
+      lightboxImg.src = getImageSrc(img);
+      lightboxImg.alt = img.alt;
+      lightboxImg.style.opacity = '1';
+    }, 150);
   }
 
-  galleryItems.forEach(function (item, index) {
-    item.addEventListener('click', function () {
-      openLightbox(index);
-    });
-
-    item.addEventListener('keydown', function (e) {
-      if (e.key === 'Enter' || e.key === ' ') {
-        e.preventDefault();
-        openLightbox(index);
-      }
-    });
-  });
+  function updateNavVisibility() {
+    // Always show nav arrows when there are multiple images
+    var show = allImages.length > 1;
+    lightboxPrev.style.display = show ? 'flex' : 'none';
+    lightboxNext.style.display = show ? 'flex' : 'none';
+  }
 
   if (lightboxClose) {
     lightboxClose.addEventListener('click', closeLightbox);
   }
 
   if (lightboxPrev) {
-    lightboxPrev.addEventListener('click', function () {
+    lightboxPrev.addEventListener('click', function (e) {
+      e.stopPropagation();
       navigateLightbox(-1);
     });
   }
 
   if (lightboxNext) {
-    lightboxNext.addEventListener('click', function () {
+    lightboxNext.addEventListener('click', function (e) {
+      e.stopPropagation();
       navigateLightbox(1);
     });
   }
@@ -171,6 +209,26 @@
   lightbox.addEventListener('click', function (e) {
     if (e.target === lightbox) closeLightbox();
   });
+
+  // Touch/swipe support for mobile
+  var touchStartX = 0;
+  var touchEndX = 0;
+
+  lightbox.addEventListener('touchstart', function (e) {
+    touchStartX = e.changedTouches[0].screenX;
+  }, { passive: true });
+
+  lightbox.addEventListener('touchend', function (e) {
+    touchEndX = e.changedTouches[0].screenX;
+    var diff = touchStartX - touchEndX;
+    if (Math.abs(diff) > 50) {
+      if (diff > 0) {
+        navigateLightbox(1); // Swipe left → next
+      } else {
+        navigateLightbox(-1); // Swipe right → prev
+      }
+    }
+  }, { passive: true });
 
   // --- Language Toggle ---
   var currentLang = 'da';
@@ -363,6 +421,106 @@
     'kon-form-name-ph': { da: 'Dit navn', en: 'Your name' },
     'kon-form-email-ph': { da: 'Din e-mail', en: 'Your email' },
     'kon-form-msg-ph': { da: 'Skriv din besked her...', en: 'Write your message here...' },
+
+    // Navigation - Nyheder
+    'nav-nyheder': { da: 'Nyheder', en: 'News' },
+
+    // Heste - Subtitle
+    'hst-subtitle': {
+      da: 'Islandske heste og shetlandsponyer er en naturlig del af livet p\u00E5 Sandholmgaard',
+      en: 'Icelandic horses and Shetland ponies are a natural part of life at Sandholmgaard'
+    },
+
+    // Heste - Hopper (Mares)
+    'hst-hopper-title': { da: 'Hopper', en: 'Mares' },
+    'hst-hopper-intro': {
+      da: 'Vores hopper er grundstammen p\u00E5 g\u00E5rden. De er udvalgt for deres temperament, gangarter og sundhed.',
+      en: 'Our mares are the foundation of the farm. They are selected for their temperament, gaits and health.'
+    },
+    'hst-hopper-soon': {
+      da: 'Individuelle hesteprofiler kommer snart...',
+      en: 'Individual horse profiles coming soon...'
+    },
+
+    // Heste - Hingste (Stallions)
+    'hst-hingste-title': { da: 'Hingste', en: 'Stallions' },
+    'hst-hingste-intro': {
+      da: 'Vores hingste er n\u00F8je udvalgt for avlskvalitet, karakter og ridbarhed.',
+      en: 'Our stallions are carefully selected for breeding quality, character and rideability.'
+    },
+    'hst-hingste-soon': {
+      da: 'Individuelle hesteprofiler kommer snart...',
+      en: 'Individual horse profiles coming soon...'
+    },
+
+    // Heste - Ydelser (Services)
+    'hst-ydelser-title': { da: 'Ydelser', en: 'Services' },
+    'hst-ydelser-intro': {
+      da: 'Vi tilbyder en r\u00E6kke professionelle ydelser for b\u00E5de ryttere og heste',
+      en: 'We offer a range of professional services for both riders and horses'
+    },
+    'hst-svc-undervisning': { da: 'Undervisning', en: 'Lessons' },
+    'hst-svc-undervisning-desc': {
+      da: 'Rideundervisning for alle niveauer med fokus p\u00E5 islandsk ridning',
+      en: 'Riding lessons for all levels with a focus on Icelandic riding'
+    },
+    'hst-svc-traening': { da: 'Tr\u00E6ning', en: 'Training' },
+    'hst-svc-traening-desc': {
+      da: 'Professionel tr\u00E6ning af heste med respekt og t\u00E5lmodighed',
+      en: 'Professional horse training with respect and patience'
+    },
+    'hst-svc-tilridning': { da: 'Tilridning', en: 'Schooling' },
+    'hst-svc-tilridning-desc': {
+      da: 'Grundig og omsorgsfuld tilridning af unge heste',
+      en: 'Thorough and careful schooling of young horses'
+    },
+    'hst-svc-matchning': { da: 'Individuel matchning', en: 'Individual Matching' },
+    'hst-svc-matchning-desc': {
+      da: 'En-til-en r\u00E5dgivning for at finde den rette hest til nye k\u00F8bere',
+      en: 'One-to-one guidance to find the right horse for new buyers'
+    },
+
+    // Historie - Map Quote & Heritage
+    'his-map-quote': {
+      da: '\u00ABDen mest originale af byens fire g\u00E5rde\u00BB',
+      en: '\u00ABThe most original of the village\'s four farms\u00BB'
+    },
+    'his-map-cite': {
+      da: 'Beskrevet p\u00E5 kortet over R\u00F8rtang, 1789',
+      en: 'Described on the map of R\u00F8rtang, 1789'
+    },
+    'his-heritage-text': {
+      da: 'L\u00E6s mere om R\u00F8rtangs historie p\u00E5 Tik\u00F8b Kommunes lokalhistoriske side',
+      en: 'Read more about R\u00F8rtang\'s history on the Tik\u00F8b Kommune local history page'
+    },
+
+    // Nyheder (News)
+    'nyh-label': { da: 'Seneste nyt', en: 'Latest News' },
+    'nyh-title': { da: 'Nyheder', en: 'News' },
+    'nyh-subtitle': {
+      da: 'Opdateringer fra livet p\u00E5 Sandholmgaard',
+      en: 'Updates from life at Sandholmgaard'
+    },
+    'nyh-month-feb': { da: 'Feb', en: 'Feb' },
+    'nyh-month-feb2': { da: 'Feb', en: 'Feb' },
+    'nyh-post1-title': {
+      da: 'Hjemmesiden er lanceret!',
+      en: 'Website launched!'
+    },
+    'nyh-post1-text': {
+      da: 'Velkommen til MuBell Farms helt nye hjemmeside! Vi er stolte over endelig at kunne dele vores historie, vores dyr og vores vision med verden. F\u00F8lg med her for nyheder og opdateringer fra g\u00E5rden.',
+      en: 'Welcome to MuBell Farm\'s brand new website! We are proud to finally share our story, our animals and our vision with the world. Follow along here for news and updates from the farm.'
+    },
+    'nyh-post1-tag': { da: 'Milep\u00E6l', en: 'Milestone' },
+    'nyh-post2-title': {
+      da: 'For\u00E5r p\u00E5 g\u00E5rden',
+      en: 'Spring at the farm'
+    },
+    'nyh-post2-text': {
+      da: 'For\u00E5ret n\u00E6rmer sig, og vi gl\u00E6der os til en ny s\u00E6son p\u00E5 Sandholmgaard. Nye f\u00F8l, gr\u00F8nne marker og lange lyse dage venter. Hold \u00F8je med denne side for billeder og historier.',
+      en: 'Spring is approaching and we look forward to a new season at Sandholmgaard. New foals, green fields and long bright days await. Keep an eye on this page for photos and stories.'
+    },
+    'nyh-post2-tag': { da: 'Kommer snart', en: 'Coming Soon' },
 
     // Footer
     'footer-copy': {
