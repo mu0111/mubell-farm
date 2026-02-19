@@ -7,27 +7,42 @@
   'use strict';
 
   // --- Mobile Navigation ---
-  const hamburger = document.querySelector('.nav__hamburger');
-  const mobileMenu = document.querySelector('.nav__mobile');
-  const mobileLinks = document.querySelectorAll('.nav__mobile a');
+  var hamburger = document.querySelector('.nav__hamburger');
+  var mobileMenu = document.querySelector('.nav__mobile');
+  var mobileLinks = mobileMenu ? mobileMenu.querySelectorAll('a') : [];
 
-  function toggleMobileMenu() {
-    const isOpen = mobileMenu.classList.toggle('open');
+  function toggleMobileMenu(e) {
+    if (e) e.stopPropagation();
+    if (!mobileMenu || !hamburger) return;
+    var isOpen = mobileMenu.classList.toggle('open');
     hamburger.classList.toggle('active');
     document.body.classList.toggle('menu-open', isOpen);
-    hamburger.setAttribute('aria-expanded', isOpen);
+    hamburger.setAttribute('aria-expanded', String(isOpen));
   }
 
   function closeMobileMenu() {
+    if (!mobileMenu || !hamburger) return;
     mobileMenu.classList.remove('open');
     hamburger.classList.remove('active');
     document.body.classList.remove('menu-open');
     hamburger.setAttribute('aria-expanded', 'false');
   }
 
-  hamburger.addEventListener('click', toggleMobileMenu);
-  mobileLinks.forEach(function (link) {
+  if (hamburger) {
+    hamburger.addEventListener('click', toggleMobileMenu);
+  }
+
+  // Use Array.prototype.forEach for NodeList compatibility
+  Array.prototype.forEach.call(mobileLinks, function (link) {
     link.addEventListener('click', closeMobileMenu);
+  });
+
+  // Close mobile menu on outside click
+  document.addEventListener('click', function (e) {
+    if (!mobileMenu || !mobileMenu.classList.contains('open')) return;
+    if (!mobileMenu.contains(e.target) && !hamburger.contains(e.target)) {
+      closeMobileMenu();
+    }
   });
 
   // --- Navbar Scroll Effect ---
@@ -171,6 +186,7 @@
     'nav-historie': { da: 'Historien', en: 'History' },
     'nav-galleri': { da: 'Galleri', en: 'Gallery' },
     'nav-events': { da: 'Events', en: 'Events' },
+    'nav-heste': { da: 'Heste', en: 'Horses' },
     'nav-kontakt': { da: 'Kontakt', en: 'Contact' },
 
     // Hero
@@ -250,6 +266,26 @@
     'lag-text-3': {
       da: 'Vi har l\u00F8bende kuld og tager gerne en samtale med potentielle hvalpek\u00F8bere. Kontakt os for at h\u00F8re mere.',
       en: 'We have regular litters and are happy to talk with prospective puppy buyers. Contact us to learn more.'
+    },
+
+    // Heste (Horses)
+    'hst-label': { da: 'Vores Heste', en: 'Our Horses' },
+    'hst-title': { da: 'Heste', en: 'Horses' },
+    'hst-text-1': {
+      da: 'Islandske heste og shetlandsponyer er en naturlig del af livet p\u00E5 Sandholmgaard. De gr\u00E6sser p\u00E5 markerne, fylder g\u00E5rden med energi og bringer ro til hverdagen.',
+      en: 'Icelandic horses and Shetland ponies are a natural part of life at Sandholmgaard. They graze the fields, fill the farm with energy and bring calm to everyday life.'
+    },
+    'hst-text-2': {
+      da: 'Vi avler islandske heste og shetlandsponyer i det smukke landskab omkring Sandholmgaard. Vores heste vokser op i naturlige omgivelser med store foldarealer, skov og frisk luft. Det giver robuste, velafbalancerede heste med et godt temperament.',
+      en: 'We breed Icelandic horses and Shetland ponies in the beautiful landscape around Sandholmgaard. Our horses grow up in natural surroundings with large paddock areas, forest and fresh air. This produces sturdy, well-balanced horses with good temperaments.'
+    },
+    'hst-text-3': {
+      da: 'De islandske heste er kendt for deres fem gangarter og deres rolige, nysgerrige natur. Shetlandsponyerne er b\u00F8rnenes favoritter - sm\u00E5, modige og fulde af personlighed. Sammen giver de g\u00E5rden dens s\u00E6rlige karakter.',
+      en: 'The Icelandic horses are known for their five gaits and their calm, curious nature. The Shetland ponies are the children\'s favourites - small, brave and full of personality. Together, they give the farm its special character.'
+    },
+    'hst-text-4': {
+      da: 'Hestene er en del af vores hverdag. De l\u00E6rer os t\u00E5lmodighed, n\u00E6rv\u00E6r og respekt for naturen.',
+      en: 'The horses are part of our daily life. They teach us patience, presence and respect for nature.'
     },
 
     // Historie

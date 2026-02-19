@@ -70,6 +70,7 @@
         <li><a href="#om-os" data-i18n="nav-om">Om os</a></li>
         <li><a href="#husstanden" data-i18n="nav-husstanden">Husstanden</a></li>
         <li><a href="#opstaldning" data-i18n="nav-opstaldning">Opstaldning</a></li>
+        <li><a href="#heste" data-i18n="nav-heste">Heste</a></li>
         <li><a href="#lagotto" data-i18n="nav-lagotto">Lagotto</a></li>
         <li><a href="#historien" data-i18n="nav-historie">Historien</a></li>
         <li><a href="#events" data-i18n="nav-events">Events</a></li>
@@ -87,19 +88,22 @@
       </div>
     </div>
 
-    <!-- Mobile Menu -->
-    <div class="nav__mobile">
-      <a href="#om-os" data-i18n="nav-om">Om os</a>
-      <a href="#husstanden" data-i18n="nav-husstanden">Husstanden</a>
-      <a href="#opstaldning" data-i18n="nav-opstaldning">Opstaldning</a>
-      <a href="#lagotto" data-i18n="nav-lagotto">Lagotto</a>
-      <a href="#historien" data-i18n="nav-historie">Historien</a>
-      <a href="#events" data-i18n="nav-events">Events</a>
-      <a href="#stu">STU</a>
-      <a href="#galleri" data-i18n="nav-galleri">Galleri</a>
-      <a href="#kontakt" data-i18n="nav-kontakt">Kontakt</a>
     </div>
   </nav>
+
+  <!-- Mobile Menu (outside nav to avoid backdrop-filter containing block issue) -->
+  <div class="nav__mobile" id="mobile-menu">
+    <a href="#om-os" data-i18n="nav-om">Om os</a>
+    <a href="#husstanden" data-i18n="nav-husstanden">Husstanden</a>
+    <a href="#opstaldning" data-i18n="nav-opstaldning">Opstaldning</a>
+    <a href="#heste" data-i18n="nav-heste">Heste</a>
+    <a href="#lagotto" data-i18n="nav-lagotto">Lagotto</a>
+    <a href="#historien" data-i18n="nav-historie">Historien</a>
+    <a href="#events" data-i18n="nav-events">Events</a>
+    <a href="#stu">STU</a>
+    <a href="#galleri" data-i18n="nav-galleri">Galleri</a>
+    <a href="#kontakt" data-i18n="nav-kontakt">Kontakt</a>
+  </div>
 
   <!-- ==================== HERO ==================== -->
   <header class="hero" id="top">
@@ -245,8 +249,37 @@
     </div>
   </section>
 
-  <!-- ==================== 5. HISTORIEN (HISTORY) ==================== -->
-  <section class="section" id="historien">
+  <!-- ==================== 5. HESTE (HORSES) ==================== -->
+  <section class="section" id="heste">
+    <div class="container">
+      <div class="horses__grid">
+        <div class="horses__images reveal">
+          <img data-src="images/opstaldning-1.jpg" src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 800 450'%3E%3Crect fill='%23E8DFD0' width='800' height='450'/%3E%3C/svg%3E" alt="Islandske heste p&aring; fold ved Sandholmgaard" loading="lazy" width="800" height="450">
+          <img data-src="images/opstaldning-2.jpg" src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 400 300'%3E%3Crect fill='%23E8DFD0' width='400' height='300'/%3E%3C/svg%3E" alt="Heste i stalden p&aring; Sandholmgaard" loading="lazy" width="600" height="400">
+          <img data-src="images/opstaldning-3.jpg" src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 400 300'%3E%3Crect fill='%23E8DFD0' width='400' height='300'/%3E%3C/svg%3E" alt="Ridning ved Sandholmgaard" loading="lazy" width="600" height="400">
+        </div>
+        <div class="horses__text reveal">
+          <span class="section-label" data-i18n="hst-label">Vores Heste</span>
+          <h2 class="section-title" data-i18n="hst-title">Heste</h2>
+          <p data-i18n="hst-text-1">
+            Islandske heste og shetlandsponyer er en naturlig del af livet p&aring; Sandholmgaard. De gr&aelig;sser p&aring; markerne, fylder g&aring;rden med energi og bringer ro til hverdagen.
+          </p>
+          <p data-i18n="hst-text-2">
+            Vi avler islandske heste og shetlandsponyer i det smukke landskab omkring Sandholmgaard. Vores heste vokser op i naturlige omgivelser med store foldarealer, skov og frisk luft. Det giver robuste, velafbalancerede heste med et godt temperament.
+          </p>
+          <p data-i18n="hst-text-3">
+            De islandske heste er kendt for deres fem gangarter og deres rolige, nysgerrige natur. Shetlandsponyerne er b&oslash;rnenes favoritter - sm&aring;, modige og fulde af personlighed. Sammen giver de g&aring;rden dens s&aelig;rlige karakter.
+          </p>
+          <p data-i18n="hst-text-4">
+            <em>Hestene er en del af vores hverdag. De l&aelig;rer os t&aring;lmodighed, n&aelig;rv&aelig;r og respekt for naturen.</em>
+          </p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ==================== 6. HISTORIEN (HISTORY) ==================== -->
+  <section class="section section--alt" id="historien">
     <div class="container--narrow">
       <div class="text-center reveal">
         <span class="section-label" data-i18n="his-label">Siden 1789</span>
@@ -344,7 +377,7 @@
       </div>
 
       <div class="gallery__grid reveal">
-        <div class="gallery__item gallery__item--wide" tabindex="0" role="button" aria-label="&Aring;bn billede: Luftfoto af g&aring;rden">
+        <div class="gallery__item" tabindex="0" role="button" aria-label="&Aring;bn billede: Luftfoto af g&aring;rden">
           <img data-src="images/hero.jpg" src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 800 400'%3E%3Crect fill='%23E8DFD0' width='800' height='400'/%3E%3C/svg%3E" alt="Luftfoto af Sandholmgaard" loading="lazy" width="800" height="400">
         </div>
         <div class="gallery__item" tabindex="0" role="button" aria-label="&Aring;bn billede: Familien i haven">
@@ -362,7 +395,7 @@
         <div class="gallery__item" tabindex="0" role="button" aria-label="&Aring;bn billede: Galleri 1">
           <img data-src="images/galleri-1.jpg" src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 400 400'%3E%3Crect fill='%23E8DFD0' width='400' height='400'/%3E%3C/svg%3E" alt="G&aring;rdliv p&aring; Sandholmgaard" loading="lazy" width="400" height="400">
         </div>
-        <div class="gallery__item gallery__item--wide" tabindex="0" role="button" aria-label="&Aring;bn billede: Galleri 2">
+        <div class="gallery__item" tabindex="0" role="button" aria-label="&Aring;bn billede: Galleri 2">
           <img data-src="images/galleri-2.jpg" src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 800 400'%3E%3Crect fill='%23E8DFD0' width='800' height='400'/%3E%3C/svg%3E" alt="Natur og dyr p&aring; g&aring;rden" loading="lazy" width="800" height="400">
         </div>
         <div class="gallery__item" tabindex="0" role="button" aria-label="&Aring;bn billede: Galleri 3">
@@ -386,7 +419,7 @@
         <div class="gallery__item" tabindex="0" role="button" aria-label="&Aring;bn billede: Historisk bygning">
           <img data-src="images/historie-2.jpg" src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 400 400'%3E%3Crect fill='%23E8DFD0' width='400' height='400'/%3E%3C/svg%3E" alt="Historisk arkitektur" loading="lazy" width="400" height="400">
         </div>
-        <div class="gallery__item gallery__item--wide" tabindex="0" role="button" aria-label="&Aring;bn billede: Historien">
+        <div class="gallery__item" tabindex="0" role="button" aria-label="&Aring;bn billede: Historien">
           <img data-src="images/historie-3.jpg" src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 800 400'%3E%3Crect fill='%23E8DFD0' width='800' height='400'/%3E%3C/svg%3E" alt="Sandholmgaards g&aring;rdspladsen" loading="lazy" width="800" height="400">
         </div>
         <div class="gallery__item" tabindex="0" role="button" aria-label="&Aring;bn billede: Opstaldning">
@@ -494,6 +527,7 @@
       <ul class="footer__links">
         <li><a href="#om-os" data-i18n="nav-om">Om os</a></li>
         <li><a href="#opstaldning" data-i18n="nav-opstaldning">Opstaldning</a></li>
+        <li><a href="#heste" data-i18n="nav-heste">Heste</a></li>
         <li><a href="#lagotto" data-i18n="nav-lagotto">Lagotto</a></li>
         <li><a href="#historien" data-i18n="nav-historie">Historien</a></li>
         <li><a href="#galleri" data-i18n="nav-galleri">Galleri</a></li>
