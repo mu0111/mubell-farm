@@ -18,7 +18,7 @@ De islandske heste er kendt for deres fem gangarter og deres rolige, nysgerrige 
 
 Vi tilbyder en række professionelle ydelser for både ryttere og heste:
 
-- **Undervisning** — Rideundervisning for alle niveauer med fokus på islandsk ridning
-- **Træning** — Professionel træning af heste med respekt og tålmodighed
-- **Tilridning** — Grundig og omsorgsfuld tilridning af unge heste
-- **Individuel matchning** — En-til-en rådgivning for at finde den rette hest til nye købere
+- **Undervisning**  -  Rideundervisning for alle niveauer med fokus på islandsk ridning
+- **Træning**  -  Professionel træning af heste med respekt og tålmodighed
+- **Tilridning**  -  Grundig og omsorgsfuld tilridning af unge heste
+- **Individuel matchning**  -  En-til-en rådgivning for at finde den rette hest til nye købere

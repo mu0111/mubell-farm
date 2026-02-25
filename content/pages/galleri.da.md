@@ -2,8 +2,8 @@
 title: Galleri
 subtitle: Billeder fra livet på Sandholmgaard
 hero_image: /images/galleri-1.jpg
-hero_image_alt: Livet på Sandholmgaard — MuBell Farm
-meta_description: Galleri med billeder fra Sandholmgaard — MuBell Farm i Snekkersten. Heste, hunde, natur og hverdagsliv.
+hero_image_alt: Livet på Sandholmgaard  -  MuBell Farm
+meta_description: Galleri med billeder fra Sandholmgaard  -  MuBell Farm i Snekkersten. Heste, hunde, natur og hverdagsliv.
 ---
 
 <div class="gallery-grid" style="display:grid;grid-template-columns:repeat(auto-fill,minmax(280px,1fr));gap:1.2rem;margin-top:2rem;">

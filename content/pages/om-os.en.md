@@ -14,4 +14,4 @@ We are still in the early stages, but our vision is clear: a place where people,
 
 Sandholmgaard buzzes with life. Children play in the yard, horses graze in the fields, kittens sleep in the hay, and the chickens roam freely. There is always something moving here.
 
-The farm has a long history — the four-winged thatched farm has been standing since 1789 and bears the marks of the many generations who have lived and worked here.
+The farm has a long history  -  the four-winged thatched farm has been standing since 1789 and bears the marks of the many generations who have lived and worked here.

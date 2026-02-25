@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="da">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>MuBell Farm | Sandholmgaard</title>
+  <meta name="description" content="MuBell Farm på Sandholmgaard i Snekkersten. Islandske heste, Lagotto Romagnolo opdræt, bofællesskab og natur. En firelænget stråtækt gård siden 1789.">
+
+  <!-- Open Graph -->
+  <meta property="og:title" content="MuBell Farm | Sandholmgaard">
+  <meta property="og:description" content="MuBell Farm på Sandholmgaard i Snekkersten. Islandske heste, Lagotto Romagnolo opdræt, bofællesskab og natur. En firelænget stråtækt gård siden 1789.">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://mubell-farm.pages.dev/index.html">
+  <meta property="og:image" content="/images/hero.jpg">
+  <meta property="og:locale" content="da_DK">
+
+  <!-- Structured Data -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "LocalBusiness",
+    "name": "MuBell Farm",
+    "alternateName": "Sandholmgaard",
+    "url": "https://mubell-farm.pages.dev",
+    "email": "info@mubell.farm",
+    "address": {
+      "@type": "PostalAddress",
+      "streetAddress": "Rørtangvej 3",
+      "addressLocality": "Snekkersten",
+      "postalCode": "3070",
+      "addressCountry": "DK"
+    }
+  }
+  </script>
+
+  <!-- Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,600;1,400&family=DM+Serif+Display&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+
+  <!-- Stylesheet -->
+  <link rel="stylesheet" href="css/style.css?v=12">
+
+  <!-- Favicon -->
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='0.9em' font-size='90'>🌾</text></svg>">
+</head>
+<body>
+
+  <!-- ==================== NAVIGATION ==================== -->
+  <nav class="nav" role="navigation" aria-label="Hovednavigation">
+    <div class="nav__inner">
+      <a href="/" class="nav__brand">
+        <span class="nav__brand-name">MuBell Farm</span>
+        <span class="nav__brand-sub">Sandholmgaard</span>
+      </a>
+
+      <ul class="nav__links">
+        <li><a href="/om-os">Om os</a></li>
+        <li><a href="/om-os#husstanden">Husstanden</a></li>
+        <li><a href="/opstaldning">Opstaldning</a></li>
+        <li><a href="/heste">Heste</a></li>
+        <li><a href="/lagotto">Lagotto</a></li>
+        <li><a href="/historien">Historien</a></li>
+        <li><a href="/events">Events</a></li>
+        <li><a href="/galleri">Galleri</a></li>
+        <li><a href="/galleri#nyheder">Nyheder</a></li>
+        <li><a href="/kontakt">Kontakt</a></li>
+      </ul>
+
+      <div class="nav__actions">
+        <a href="/en/" class="nav__lang" aria-label="Switch to English">EN</a>
+        <button class="nav__hamburger" aria-label="Menu" aria-expanded="false">
+          <span></span>
+          <span></span>
+          <span></span>
+        </button>
+      </div>
+    </div>
+  </nav>
+
+  <!-- Mobile Menu -->
+  <div class="nav__mobile" id="mobile-menu">
+    <a href="/om-os">Om os</a>
+    <a href="/om-os#husstanden">Husstanden</a>
+    <a href="/opstaldning">Opstaldning</a>
+    <a href="/heste">Heste</a>
+    <a href="/lagotto">Lagotto</a>
+    <a href="/historien">Historien</a>
+    <a href="/events">Events</a>
+    <a href="/galleri">Galleri</a>
+    <a href="/galleri#nyheder">Nyheder</a>
+    <a href="/kontakt">Kontakt</a>
+  </div>
+
+  <!-- ==================== CONTENT ==================== -->
+  <header class="hero" id="top">
+  <div class="hero__image">
+    <img src="images/hero.jpg" alt="Luftfoto af Sandholmgaard, en firelænget stråtækt gård i Snekkersten" width="1920" height="1080">
+  </div>
+  <div class="hero__overlay"></div>
+  <div class="hero__content">
+    <div class="hero__logo">
+      <svg class="hero__logo-svg" viewBox="0 0 500 320" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Sandholmgaard - MuBell Farm - Siden 1789">
+        <defs>
+          <path id="arch-path" d="M 50,245 Q 250,15 450,245" fill="none"/>
+        </defs>
+        <!-- Arched farm name -->
+        <text font-family="'Cormorant Garamond', Georgia, serif" font-size="36" font-weight="600" fill="#FAF7F2" letter-spacing="6">
+          <textPath href="#arch-path" startOffset="50%" text-anchor="middle">SANDHOLMGAARD</textPath>
+        </text>
+        <!-- Decorative separator -->
+        <line x1="155" y1="258" x2="237" y2="258" stroke="rgba(250,247,242,0.3)" stroke-width="0.5"/>
+        <text x="250" y="262" text-anchor="middle" font-size="7" fill="rgba(250,247,242,0.4)">&#x25C6;</text>
+        <line x1="263" y1="258" x2="345" y2="258" stroke="rgba(250,247,242,0.3)" stroke-width="0.5"/>
+        <!-- Brand name -->
+        <text x="250" y="290" text-anchor="middle" font-family="'DM Serif Display', Georgia, serif" font-size="34" fill="#FAF7F2" letter-spacing="2">MuBell Farm</text>
+        <!-- Since year -->
+        <text x="250" y="314" text-anchor="middle" font-family="'Cormorant Garamond', Georgia, serif" font-size="11" fill="rgba(250,247,242,0.6)" letter-spacing="5">SIDEN 1789</text>
+      </svg>
+    </div>
+    <p class="hero__tagline">Mennesker, planter og dyr får vores hjerter til at synge</p>
+    <a href="om-os" class="hero__scroll">
+      <span class="hero__scroll-icon"></span>
+      <span>Udforsk</span>
+    </a>
+  </div>
+</header>
+
+
+  <!-- ==================== FOOTER ==================== -->
+  <footer class="footer">
+    <div class="container">
+      <p class="footer__brand">MuBell Farm</p>
+      <p class="footer__sub">Sandholmgaard</p>
+      <ul class="footer__links">
+        <li><a href="/om-os">Om os</a></li>
+        <li><a href="/opstaldning">Opstaldning</a></li>
+        <li><a href="/heste">Heste</a></li>
+        <li><a href="/lagotto">Lagotto</a></li>
+        <li><a href="/historien">Historien</a></li>
+        <li><a href="/galleri">Galleri</a></li>
+        <li><a href="/galleri#nyheder">Nyheder</a></li>
+        <li><a href="/kontakt">Kontakt</a></li>
+      </ul>
+      <p class="footer__copy">© 2026 MuBell Farm / Sandholmgaard. Alle rettigheder forbeholdes.</p>
+    </div>
+  </footer>
+
+  <!-- Script -->
+  <script src="js/main.js?v=12"></script>
+</body>
+</html>

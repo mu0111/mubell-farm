@@ -2,8 +2,8 @@
 title: Gallery
 subtitle: Images from life at Sandholmgaard
 hero_image: /images/galleri-1.jpg
-hero_image_alt: Life at Sandholmgaard — MuBell Farm
-meta_description: Gallery of images from Sandholmgaard — MuBell Farm in Snekkersten. Horses, dogs, nature and everyday life.
+hero_image_alt: Life at Sandholmgaard  -  MuBell Farm
+meta_description: Gallery of images from Sandholmgaard  -  MuBell Farm in Snekkersten. Horses, dogs, nature and everyday life.
 ---
 
 <div class="gallery-grid" style="display:grid;grid-template-columns:repeat(auto-fill,minmax(280px,1fr));gap:1.2rem;margin-top:2rem;">

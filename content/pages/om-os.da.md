@@ -14,4 +14,4 @@ Vi er stadig i den spæde start, men visionen er klar: et sted hvor mennesker, d
 
 Sandholmgaard summer af liv. Børn leger i gården, heste græsser på marken, killinger sover i høet, og hønsene går frit. Her er der altid noget der rører sig.
 
-Gården har en lang historie — den firelængede stråtækte gård er opført siden 1789 og bærer præg af de mange generationer, der har levet og arbejdet her.
+Gården har en lang historie  -  den firelængede stråtækte gård er opført siden 1789 og bærer præg af de mange generationer, der har levet og arbejdet her.

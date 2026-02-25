@@ -1657,13 +1657,13 @@ body.menu-open {
   min-height: auto;
 }
 
-/* Gallery section — allow natural height (content exceeds 100vh, which is fine with proximity) */
+/* Gallery section  -  allow natural height (content exceeds 100vh, which is fine with proximity) */
 #galleri {
   min-height: auto;
 
 }
 
-/* Heste section — allow natural height (lots of content) */
+/* Heste section  -  allow natural height (lots of content) */
 #heste {
   min-height: auto;
 
@@ -2091,7 +2091,7 @@ body {
 }
 
 /* --- Scroll-Snap Reinforcement (v12) --- */
-/* scroll-snap-stop: always removed — was trapping users in sections */
+/* scroll-snap-stop: always removed  -  was trapping users in sections */
 
 /* Print */
 @media print {
