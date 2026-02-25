@@ -1,5 +1,7 @@
 ---
 title: Contact
+hero_image: /images/hustanden-1.jpg
+hero_image_alt: Sandholmgaard farm
 ---
 
 ## Contact MuBell Farm

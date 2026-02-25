@@ -1,5 +1,7 @@
 ---
 title: Kontakt
+hero_image: /images/hustanden-1.jpg
+hero_image_alt: Sandholmgaard set fra haven
 ---
 
 ## Kontakt MuBell Farm

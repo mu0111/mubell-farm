@@ -1,5 +1,7 @@
 ---
 title: Lessons
+hero_image: /images/opstaldning-3.jpg
+hero_image_alt: Riding lessons at Sandholmgaard
 ---
 
 ## Riding Lessons at Sandholmgaard

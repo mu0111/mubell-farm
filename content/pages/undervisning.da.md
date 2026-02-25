@@ -1,5 +1,7 @@
 ---
 title: Undervisning
+hero_image: /images/opstaldning-3.jpg
+hero_image_alt: Rideundervisning på Sandholmgaard
 ---
 
 ## Rideundervisning på Sandholmgaard

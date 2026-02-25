@@ -35,10 +35,15 @@ const DIST     = path.join(ROOT, 'dist');
 // ─── i18n strings ─────────────────────────────────────────────────────────────
 const I18N = {
   da: {
+    nav_prefix:      '/',
     nav_om:          'Om os',
+    nav_husstanden:  'Husstanden',
     nav_opstaldning: 'Opstaldning',
     nav_heste:       'Heste',
+    nav_lagotto:     'Lagotto',
+    nav_historien:   'Historien',
     nav_events:      'Events',
+    nav_galleri:     'Galleri',
     nav_nyheder:     'Nyheder',
     nav_kontakt:     'Kontakt',
     footer_copy:     '© 2026 MuBell Farm / Sandholmgaard. Alle rettigheder forbeholdes.',
@@ -53,10 +58,15 @@ const I18N = {
     other_lang_root: 'en/',
   },
   en: {
+    nav_prefix:      '/en/',
     nav_om:          'About us',
+    nav_husstanden:  'The Family',
     nav_opstaldning: 'Boarding',
     nav_heste:       'Horses',
+    nav_lagotto:     'Lagotto',
+    nav_historien:   'History',
     nav_events:      'Events',
+    nav_galleri:     'Gallery',
     nav_nyheder:     'News',
     nav_kontakt:     'Contact',
     footer_copy:     '© 2026 MuBell Farm / Sandholmgaard. All rights reserved.',
@@ -226,10 +236,18 @@ function buildPages(settings) {
         inner = renderTemplate(homeTmpl, heroVars);
       } else {
         const pageTmpl = readTemplate('page.html');
+        const heroRoot = lang === 'da' ? '' : '../';
+        const rawHero = frontmatter.hero_image || '';
+        // Support relative paths: prefix with root if not absolute
+        const heroImg = rawHero && !rawHero.startsWith('/') && !rawHero.startsWith('http')
+          ? heroRoot + rawHero
+          : rawHero;
         inner = renderTemplate(pageTmpl, {
-          page_id:  slug,
+          page_id:        slug,
           title,
-          subtitle: frontmatter.subtitle || '',
+          subtitle:       frontmatter.subtitle || '',
+          hero_image:     heroImg,
+          hero_image_alt: frontmatter.hero_image_alt || title,
           body,
         });
       }
@@ -244,6 +262,7 @@ function buildPages(settings) {
         meta_description: frontmatter.meta_description || frontmatter.subtitle || title,
         page_url:         lang === 'da' ? `/${slug}.html` : `/en/${slug}.html`,
         page_slug:        slug,
+        og_image:         frontmatter.hero_image || '/images/hero.jpg',
         ...frontmatter,
       }, lang);
 
@@ -367,6 +386,7 @@ function buildNews(settings) {
       label_nyheder:  t.label_nyheder,
       title_nyheder:  t.title_nyheder,
       label_read_more: t.label_read_more,
+      root:            lang === 'da' ? '' : '../',
       posts: postList,
     });
 

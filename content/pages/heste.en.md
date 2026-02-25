@@ -1,6 +1,9 @@
 ---
 title: Horses
 subtitle: Icelandic horses and Shetland ponies are a natural part of life at Sandholmgaard
+hero_image: /images/galleri-1.jpg
+hero_image_alt: Icelandic horses and Shetland ponies at Sandholmgaard
+meta_description: Icelandic horses and Shetland ponies at MuBell Farm. Lessons, training and breeding at Sandholmgaard in Snekkersten.
 ---
 
 Icelandic horses and Shetland ponies are a natural part of life at Sandholmgaard. They graze in the fields, fill the farm with energy and bring calm to everyday life.

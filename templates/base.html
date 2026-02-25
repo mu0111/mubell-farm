@@ -10,7 +10,7 @@
   <meta property="og:title" content="{{page_title}}">
   <meta property="og:description" content="{{meta_description}}">
   <meta property="og:type" content="website">
-  <meta property="og:url" content="https://mubell.farm{{page_url}}">
+  <meta property="og:url" content="https://mubell-farm.pages.dev{{page_url}}">
   <meta property="og:image" content="{{og_image}}">
   <meta property="og:locale" content="{{og_locale}}">
 
@@ -21,7 +21,7 @@
     "@type": "LocalBusiness",
     "name": "MuBell Farm",
     "alternateName": "Sandholmgaard",
-    "url": "https://mubell.farm",
+    "url": "https://mubell-farm.pages.dev",
     "email": "info@mubell.farm",
     "address": {
       "@type": "PostalAddress",
@@ -49,18 +49,22 @@
   <!-- ==================== NAVIGATION ==================== -->
   <nav class="nav" role="navigation" aria-label="Hovednavigation">
     <div class="nav__inner">
-      <a href="{{root}}" class="nav__brand">
+      <a href="/" class="nav__brand">
         <span class="nav__brand-name">MuBell Farm</span>
         <span class="nav__brand-sub">Sandholmgaard</span>
       </a>
 
       <ul class="nav__links">
-        <li><a href="{{root}}om-os">{{nav_om}}</a></li>
-        <li><a href="{{root}}opstaldning">{{nav_opstaldning}}</a></li>
-        <li><a href="{{root}}heste">{{nav_heste}}</a></li>
-        <li><a href="{{root}}events">{{nav_events}}</a></li>
-        <li><a href="{{root}}nyheder">{{nav_nyheder}}</a></li>
-        <li><a href="{{root}}kontakt">{{nav_kontakt}}</a></li>
+        <li><a href="{{nav_prefix}}om-os">{{nav_om}}</a></li>
+        <li><a href="{{nav_prefix}}om-os#husstanden">{{nav_husstanden}}</a></li>
+        <li><a href="{{nav_prefix}}opstaldning">{{nav_opstaldning}}</a></li>
+        <li><a href="{{nav_prefix}}heste">{{nav_heste}}</a></li>
+        <li><a href="{{nav_prefix}}lagotto">{{nav_lagotto}}</a></li>
+        <li><a href="{{nav_prefix}}historien">{{nav_historien}}</a></li>
+        <li><a href="{{nav_prefix}}events">{{nav_events}}</a></li>
+        <li><a href="{{nav_prefix}}galleri">{{nav_galleri}}</a></li>
+        <li><a href="{{nav_prefix}}galleri#nyheder">{{nav_nyheder}}</a></li>
+        <li><a href="{{nav_prefix}}kontakt">{{nav_kontakt}}</a></li>
       </ul>
 
       <div class="nav__actions">
@@ -76,12 +80,16 @@
 
   <!-- Mobile Menu -->
   <div class="nav__mobile" id="mobile-menu">
-    <a href="{{root}}om-os">{{nav_om}}</a>
-    <a href="{{root}}opstaldning">{{nav_opstaldning}}</a>
-    <a href="{{root}}heste">{{nav_heste}}</a>
-    <a href="{{root}}events">{{nav_events}}</a>
-    <a href="{{root}}nyheder">{{nav_nyheder}}</a>
-    <a href="{{root}}kontakt">{{nav_kontakt}}</a>
+    <a href="{{nav_prefix}}om-os">{{nav_om}}</a>
+    <a href="{{nav_prefix}}om-os#husstanden">{{nav_husstanden}}</a>
+    <a href="{{nav_prefix}}opstaldning">{{nav_opstaldning}}</a>
+    <a href="{{nav_prefix}}heste">{{nav_heste}}</a>
+    <a href="{{nav_prefix}}lagotto">{{nav_lagotto}}</a>
+    <a href="{{nav_prefix}}historien">{{nav_historien}}</a>
+    <a href="{{nav_prefix}}events">{{nav_events}}</a>
+    <a href="{{nav_prefix}}galleri">{{nav_galleri}}</a>
+    <a href="{{nav_prefix}}galleri#nyheder">{{nav_nyheder}}</a>
+    <a href="{{nav_prefix}}kontakt">{{nav_kontakt}}</a>
   </div>
 
   <!-- ==================== CONTENT ==================== -->
@@ -93,12 +101,14 @@
       <p class="footer__brand">MuBell Farm</p>
       <p class="footer__sub">Sandholmgaard</p>
       <ul class="footer__links">
-        <li><a href="{{root}}om-os">{{nav_om}}</a></li>
-        <li><a href="{{root}}opstaldning">{{nav_opstaldning}}</a></li>
-        <li><a href="{{root}}heste">{{nav_heste}}</a></li>
-        <li><a href="{{root}}events">{{nav_events}}</a></li>
-        <li><a href="{{root}}nyheder">{{nav_nyheder}}</a></li>
-        <li><a href="{{root}}kontakt">{{nav_kontakt}}</a></li>
+        <li><a href="{{nav_prefix}}om-os">{{nav_om}}</a></li>
+        <li><a href="{{nav_prefix}}opstaldning">{{nav_opstaldning}}</a></li>
+        <li><a href="{{nav_prefix}}heste">{{nav_heste}}</a></li>
+        <li><a href="{{nav_prefix}}lagotto">{{nav_lagotto}}</a></li>
+        <li><a href="{{nav_prefix}}historien">{{nav_historien}}</a></li>
+        <li><a href="{{nav_prefix}}galleri">{{nav_galleri}}</a></li>
+        <li><a href="{{nav_prefix}}galleri#nyheder">{{nav_nyheder}}</a></li>
+        <li><a href="{{nav_prefix}}kontakt">{{nav_kontakt}}</a></li>
       </ul>
       <p class="footer__copy">{{footer_copy}}</p>
     </div>

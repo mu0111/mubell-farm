@@ -1,6 +1,9 @@
 ---
 title: Heste
 subtitle: Islandske heste og shetlandsponyer er en naturlig del af livet på Sandholmgaard
+hero_image: /images/galleri-1.jpg
+hero_image_alt: Islandske heste og shetlandsponyer på Sandholmgaard
+meta_description: Islandske heste og shetlandsponyer på MuBell Farm. Undervisning, træning, tilridning og avl på Sandholmgaard i Snekkersten.
 ---
 
 Islandske heste og shetlandsponyer er en naturlig del af livet på Sandholmgaard. De græsser på markerne, fylder gården med energi og bringer ro til hverdagen.

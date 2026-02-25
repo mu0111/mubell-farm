@@ -1,18 +1,18 @@
 <article class="section news-post" id="news-{{slug}}">
   <div class="container">
-    <div class="news-post__header reveal">
+    <div class="news-post__header">
       <time class="news__date" datetime="{{date_iso}}">{{date_formatted}}</time>
       <h1 class="section-title">{{title}}</h1>
     </div>
     {{#if featured_image}}
-    <div class="news-post__image reveal">
+    <div class="news-post__image">
       <img src="{{featured_image}}" alt="{{title}}" width="1200" height="600" loading="lazy">
     </div>
     {{/if}}
-    <div class="news-post__body prose reveal">
+    <div class="news-post__body prose">
       {{body}}
     </div>
-    <div class="news-post__back reveal">
+    <div class="news-post__back">
       <a href="{{root}}nyheder.html" class="btn btn--secondary">← {{label_back}}</a>
     </div>
   </div>

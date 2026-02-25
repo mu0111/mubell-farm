@@ -44,7 +44,7 @@
 
 html {
   scroll-behavior: smooth;
-  scroll-snap-type: y proximity;
+
   font-size: 16px;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
@@ -326,7 +326,7 @@ h1, h2, h3, h4, h5, h6 {
   align-items: center;
   justify-content: center;
   overflow: hidden;
-  scroll-snap-align: start;
+
 }
 
 .hero__image {
@@ -441,7 +441,7 @@ h1, h2, h3, h4, h5, h6 {
 .section {
   padding: var(--section-padding);
   min-height: 100vh;
-  scroll-snap-align: start;
+
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -1653,20 +1653,20 @@ body.menu-open {
 
 /* Footer should not snap or fill viewport */
 .footer {
-  scroll-snap-align: none;
+
   min-height: auto;
 }
 
 /* Gallery section — allow natural height (content exceeds 100vh, which is fine with proximity) */
 #galleri {
   min-height: auto;
-  scroll-snap-align: start;
+
 }
 
 /* Heste section — allow natural height (lots of content) */
 #heste {
   min-height: auto;
-  scroll-snap-align: start;
+
 }
 
 /* Immersive image sizing for desktop */

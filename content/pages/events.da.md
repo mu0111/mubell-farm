@@ -1,5 +1,7 @@
 ---
 title: Events
+hero_image: /images/galleri-2.jpg
+hero_image_alt: Events og arrangementer på Sandholmgaard
 ---
 
 ## Events på Sandholmgaard
