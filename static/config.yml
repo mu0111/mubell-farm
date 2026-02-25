@@ -1,0 +1,146 @@
+backend:
+  name: github
+  repo: mu0111/mubell-farm
+  branch: main
+  base_url: https://mubell-farm-oauth.murat-armbruster.workers.dev
+
+publish_mode: editorial_workflow
+
+media_folder: images
+public_folder: /images
+
+i18n:
+  structure: multiple_files
+  locales: [da, en]
+  default_locale: da
+
+collections:
+  # ─── PAGES ────────────────────────────────────────────────
+  - name: pages
+    label: "Sider / Pages"
+    i18n: true
+    files:
+
+      - name: index
+        label: "Forside (Home)"
+        file: content/pages/index.{{locale}}.md
+        i18n: true
+        fields:
+          - { name: hero_image, label: "Hovedbillede", widget: image, required: false }
+          - { name: hero_title, label: "Overskrift", widget: string, i18n: true }
+          - { name: hero_subtitle, label: "Undertekst", widget: string, i18n: true }
+          - { name: body, label: "Indhold", widget: markdown, i18n: true }
+
+      - name: opstaldning
+        label: "Opstaldning (Boarding)"
+        file: content/pages/opstaldning.{{locale}}.md
+        i18n: true
+        fields:
+          - { name: title, label: "Titel", widget: string, i18n: true }
+          - { name: subtitle, label: "Undertekst", widget: string, i18n: true, required: false }
+          - { name: body, label: "Indhold", widget: markdown, i18n: true }
+          - name: features
+            label: "Faciliteter"
+            widget: list
+            i18n: true
+            field: { name: item, label: "Facilitet", widget: string }
+
+      - name: undervisning
+        label: "Undervisning (Teaching)"
+        file: content/pages/undervisning.{{locale}}.md
+        i18n: true
+        fields:
+          - { name: title, label: "Titel", widget: string, i18n: true }
+          - { name: body, label: "Indhold", widget: markdown, i18n: true }
+
+      - name: events
+        label: "Events"
+        file: content/pages/events.{{locale}}.md
+        i18n: true
+        fields:
+          - { name: title, label: "Titel", widget: string, i18n: true }
+          - { name: body, label: "Indhold", widget: markdown, i18n: true }
+
+      - name: om-os
+        label: "Om os (About)"
+        file: content/pages/om-os.{{locale}}.md
+        i18n: true
+        fields:
+          - { name: title, label: "Titel", widget: string, i18n: true }
+          - { name: body, label: "Indhold", widget: markdown, i18n: true }
+
+      - name: kontakt
+        label: "Kontakt (Contact)"
+        file: content/pages/kontakt.{{locale}}.md
+        i18n: true
+        fields:
+          - { name: title, label: "Titel", widget: string, i18n: true }
+          - { name: body, label: "Indhold", widget: markdown, i18n: true }
+
+  # ─── HORSES ───────────────────────────────────────────────
+  - name: horses
+    label: "Heste / Horses"
+    folder: content/horses
+    create: true
+    i18n: true
+    slug: "{{name}}"
+    fields:
+      - { name: name, label: "Navn", widget: string }
+      - name: category
+        label: "Kategori"
+        widget: select
+        options:
+          - { label: "Hoppe", value: "hoppe" }
+          - { label: "Hingst", value: "hingst" }
+          - { label: "Shetlandspony", value: "shetlandspony" }
+          - { label: "Vallak", value: "vallak" }
+      - { name: breed, label: "Race", widget: string, default: "Islandsk hest", required: false }
+      - { name: birth_year, label: "Fødselsår", widget: number, required: false }
+      - { name: photo, label: "Billede", widget: image, required: false }
+      - { name: facebook_url, label: "Facebook link", widget: string, required: false }
+      - { name: body, label: "Beskrivelse", widget: markdown, i18n: true }
+
+  # ─── NEWS ─────────────────────────────────────────────────
+  - name: news
+    label: "Nyheder / News"
+    folder: content/news
+    create: true
+    i18n: true
+    slug: "{{year}}-{{month}}-{{day}}-{{slug}}"
+    fields:
+      - { name: title, label: "Titel", widget: string, i18n: true }
+      - { name: date, label: "Dato", widget: datetime }
+      - { name: featured_image, label: "Billede", widget: image, required: false }
+      - { name: excerpt, label: "Kort beskrivelse", widget: text, i18n: true, required: false }
+      - { name: body, label: "Indhold", widget: markdown, i18n: true }
+
+  # ─── TESTIMONIALS ─────────────────────────────────────────
+  - name: testimonials
+    label: "Anbefalinger / Testimonials"
+    folder: content/testimonials
+    create: true
+    slug: "{{name}}"
+    fields:
+      - { name: name, label: "Navn", widget: string }
+      - { name: role, label: "Rolle (f.eks. 'Hesteejer')", widget: string, required: false }
+      - { name: quote, label: "Citat", widget: text }
+      - { name: photo, label: "Billede", widget: image, required: false }
+      - { name: date, label: "Dato", widget: datetime, required: false }
+
+  # ─── SETTINGS ─────────────────────────────────────────────
+  - name: settings
+    label: "Indstillinger / Settings"
+    files:
+      - name: site
+        label: "Sideindstillinger"
+        file: content/settings.json
+        fields:
+          - { name: site_title, label: "Sidetitel", widget: string }
+          - { name: tagline, label: "Tagline", widget: string, required: false }
+          - { name: logo, label: "Logo", widget: image, required: false }
+          - { name: phone, label: "Telefon", widget: string, required: false }
+          - { name: email, label: "Email", widget: string }
+          - { name: address, label: "Adresse", widget: text }
+          - { name: instagram_url, label: "Instagram URL", widget: string, required: false }
+          - { name: facebook_url, label: "Facebook URL", widget: string, required: false }
+          - { name: tikob_link, label: "Tikøb Kommune link", widget: string, default: "https://tikobkommune.dk", required: false }

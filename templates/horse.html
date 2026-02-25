@@ -1,0 +1,23 @@
+<section class="section" id="horse-{{slug}}">
+  <div class="container">
+    <div class="horse__profile reveal">
+      {{#if photo}}
+      <div class="horse__photo">
+        <img src="{{photo}}" alt="{{name}}" width="600" height="400" loading="lazy">
+      </div>
+      {{/if}}
+      <div class="horse__info">
+        <span class="section-label">{{category_label}}</span>
+        <h1 class="section-title">{{name}}</h1>
+        {{#if breed}}<p class="horse__breed">{{breed}}</p>{{/if}}
+        {{#if birth_year}}<p class="horse__year">Født: {{birth_year}}</p>{{/if}}
+        <div class="prose">
+          {{body}}
+        </div>
+        {{#if facebook_url}}
+        <a href="{{facebook_url}}" class="btn" target="_blank" rel="noopener noreferrer">Se mere på Facebook</a>
+        {{/if}}
+      </div>
+    </div>
+  </div>
+</section>

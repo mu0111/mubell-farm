@@ -44,7 +44,7 @@
 
 html {
   scroll-behavior: smooth;
-  scroll-snap-type: y mandatory;
+  scroll-snap-type: y proximity;
   font-size: 16px;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
@@ -1751,6 +1751,22 @@ body {
   color: #FAF7F2;
 }
 
+/* Headings inside green sections need to be readable */
+.section h2,
+.section h3,
+.section .prose h2,
+.section .prose h3 {
+  color: rgba(250, 247, 242, 0.92);
+}
+
+.section a {
+  color: #B8D4A8;
+}
+
+.section a:hover {
+  color: #FAF7F2;
+}
+
 .section--alt {
   background-color: #4B5E47;
   color: #FAF7F2;
@@ -2075,9 +2091,7 @@ body {
 }
 
 /* --- Scroll-Snap Reinforcement (v12) --- */
-.section {
-  scroll-snap-stop: always;
-}
+/* scroll-snap-stop: always removed — was trapping users in sections */
 
 /* Print */
 @media print {

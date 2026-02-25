@@ -1,0 +1,23 @@
+# Cloudflare Pages _redirects
+# https://developers.cloudflare.com/pages/configuration/redirects/
+
+# Admin — Decap CMS
+/admin              /admin/index.html   200
+/admin/             /admin/index.html   200
+
+# Decap needs config at this path
+/admin/config.yml   /static/config.yml  200
+
+# Legacy HTML file redirects (in case old .html URLs are linked)
+/index.html         /                   301
+/om-os.html         /om-os.html         200
+/opstaldning.html   /opstaldning.html   200
+/heste.html         /heste.html         200
+/kontakt.html       /kontakt.html       200
+
+# English root
+/en                 /en/index.html      200
+/en/                /en/index.html      200
+
+# Fallback: SPA-style 404 → custom 404 (optional)
+# /*                  /404.html           404

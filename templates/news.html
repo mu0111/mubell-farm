@@ -1,0 +1,25 @@
+<section class="section" id="nyheder">
+  <div class="container">
+    <div class="text-center reveal">
+      <span class="section-label">{{label_nyheder}}</span>
+      <h1 class="section-title">{{title_nyheder}}</h1>
+    </div>
+    <div class="news__grid reveal">
+      {{#each posts}}
+      <article class="news__card">
+        {{#if featured_image}}
+        <a href="{{url}}">
+          <img src="{{featured_image}}" alt="{{title}}" width="600" height="400" loading="lazy">
+        </a>
+        {{/if}}
+        <div class="news__card-body">
+          <time class="news__date" datetime="{{date_iso}}">{{date_formatted}}</time>
+          <h2 class="news__card-title"><a href="{{url}}">{{title}}</a></h2>
+          {{#if excerpt}}<p class="news__excerpt">{{excerpt}}</p>{{/if}}
+          <a href="{{url}}" class="news__read-more">{{label_read_more}}</a>
+        </div>
+      </article>
+      {{/each}}
+    </div>
+  </div>
+</section>
