@@ -1,7 +1,7 @@
 ---
 title: Historien
 subtitle: Sandholmgaard har stået siden 1789  -  mere end to hundrede år med liv, arbejde og kærlighed til landet
-hero_image: /images/historie-1.jpg
+hero_image: /images/historien-1.jpg
 hero_image_alt: Sandholmgaard  -  den firelængede stråtækte gård set fra gårdspladsen
 meta_description: Historien om Sandholmgaard i Snekkersten  -  en firelænget stråtækt gård med rødder tilbage til 1789.
 ---

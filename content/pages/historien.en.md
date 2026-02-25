@@ -1,7 +1,7 @@
 ---
 title: History
 subtitle: Sandholmgaard has stood since 1789  -  more than two hundred years of life, work and love of the land
-hero_image: /images/historie-1.jpg
+hero_image: /images/historien-1.jpg
 hero_image_alt: Sandholmgaard  -  the four-winged thatched farm seen from the courtyard
 meta_description: The history of Sandholmgaard in Snekkersten  -  a four-winged thatched farm with roots going back to 1789.
 ---
