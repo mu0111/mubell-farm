@@ -1,5 +1,7 @@
 ---
 title: About us
+hero_image: /images/hustanden-1.jpg
+hero_image_alt: The family and household at Sandholmgaard
 ---
 
 ## Welcome to MuBell Farm

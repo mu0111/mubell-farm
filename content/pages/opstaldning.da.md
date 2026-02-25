@@ -1,5 +1,7 @@
 ---
 title: Opstaldning
+hero_image: /images/opstaldning-1.jpg
+hero_image_alt: Opstaldning for islandske heste på Sandholmgaard
 subtitle: Professionel opstaldning for islandske heste i naturskønne omgivelser
 features:
   - Store foldarealer med naturligt græs

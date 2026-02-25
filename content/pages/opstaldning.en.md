@@ -1,5 +1,7 @@
 ---
 title: Boarding
+hero_image: /images/opstaldning-1.jpg
+hero_image_alt: Horse boarding at Sandholmgaard
 subtitle: Professional boarding for Icelandic horses in beautiful natural surroundings
 features:
   - Large paddocks with natural grass

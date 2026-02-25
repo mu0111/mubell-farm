@@ -1,5 +1,7 @@
 ---
 title: Om os
+hero_image: /images/hustanden-1.jpg
+hero_image_alt: Familien og husstanden på Sandholmgaard
 ---
 
 ## Velkommen til MuBell Farm

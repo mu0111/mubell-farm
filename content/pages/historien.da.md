@@ -21,3 +21,9 @@ I dag lever gården videre i en ny tid  -  med bofællesskab, heste, hunde, høn
 MuBell Farm er fortsat af den overbevisning, at stedet bærer noget sjældent  -  en sjæl, der er skabt over mange liv og mange sæsoner. Vi passer på det.
 
 *En gård er aldrig færdig. Den vokser med dem, der bor der.*
+
+## Rørtang og Tikøb Kommune
+
+Sandholmgaard ligger i Rørtang, et historisk område under den gamle Tikøb Kommune. Områdets rige historie strækker sig langt tilbage og er veldokumenteret.
+
+[Læs mere om Rørtangs historie på Tikøb Kommunes kulturarvsside →](http://tikobkommune.dk/roertang/)
