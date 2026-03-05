@@ -104,10 +104,7 @@ collections:
     folder: content/horses
     create: true
     slug: "{{name}}"
-    i18n:
-      structure: multiple_files
-      locales: [da, en]
-      default_locale: da
+    extension: da.md
     fields:
       - { name: name, label: "Navn", widget: string }
       - name: category
@@ -122,7 +119,7 @@ collections:
       - { name: birth_year, label: "Foedselsaar", widget: number, required: false }
       - { name: photo, label: "Billede", widget: image, required: false }
       - { name: facebook_url, label: "Facebook link", widget: string, required: false }
-      - { name: body, label: "Beskrivelse", widget: markdown, i18n: true }
+      - { name: body, label: "Beskrivelse", widget: markdown }
 
   # --- NEWS ---
   - name: news
@@ -130,16 +127,13 @@ collections:
     folder: content/news
     create: true
     slug: "{{year}}-{{month}}-{{day}}-{{slug}}"
-    i18n:
-      structure: multiple_files
-      locales: [da, en]
-      default_locale: da
+    extension: da.md
     fields:
-      - { name: title, label: "Titel", widget: string, i18n: true }
+      - { name: title, label: "Titel", widget: string }
       - { name: date, label: "Dato", widget: datetime }
       - { name: featured_image, label: "Billede", widget: image, required: false }
-      - { name: excerpt, label: "Kort beskrivelse", widget: text, i18n: true, required: false }
-      - { name: body, label: "Indhold", widget: markdown, i18n: true }
+      - { name: excerpt, label: "Kort beskrivelse", widget: text, required: false }
+      - { name: body, label: "Indhold", widget: markdown }
 
   # --- TESTIMONIALS ---
   - name: testimonials
