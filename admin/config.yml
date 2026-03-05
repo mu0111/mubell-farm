@@ -103,8 +103,11 @@ collections:
     label: "Heste / Horses"
     folder: content/horses
     create: true
-    i18n: true
     slug: "{{name}}"
+    i18n:
+      structure: multiple_files
+      locales: [da, en]
+      default_locale: da
     fields:
       - { name: name, label: "Navn", widget: string }
       - name: category
@@ -126,8 +129,11 @@ collections:
     label: "Nyheder / News"
     folder: content/news
     create: true
-    i18n: true
     slug: "{{year}}-{{month}}-{{day}}-{{slug}}"
+    i18n:
+      structure: multiple_files
+      locales: [da, en]
+      default_locale: da
     fields:
       - { name: title, label: "Titel", widget: string, i18n: true }
       - { name: date, label: "Dato", widget: datetime }
