@@ -9,75 +9,96 @@ publish_mode: editorial_workflow
 media_folder: images
 public_folder: /images
 
-i18n:
-  structure: multiple_files
-  locales: [da, en]
-  default_locale: da
-
 collections:
-  # ─── PAGES ────────────────────────────────────────────────
-  - name: pages
-    label: "Sider / Pages"
-    i18n: true
+  # --- PAGES (Dansk) ---
+  - name: pages-da
+    label: "Sider (Dansk)"
     files:
-
-      - name: index
-        label: "Forside (Home)"
-        file: content/pages/index.{{locale}}.md
-        i18n: true
+      - name: index-da
+        label: "Forside"
+        file: content/pages/index.da.md
         fields:
           - { name: hero_image, label: "Hovedbillede", widget: image, required: false }
-          - { name: hero_title, label: "Overskrift", widget: string, i18n: true }
-          - { name: hero_subtitle, label: "Undertekst", widget: string, i18n: true }
-          - { name: body, label: "Indhold", widget: markdown, i18n: true }
-
-      - name: opstaldning
-        label: "Opstaldning (Boarding)"
-        file: content/pages/opstaldning.{{locale}}.md
-        i18n: true
+          - { name: hero_title, label: "Overskrift", widget: string }
+          - { name: hero_subtitle, label: "Undertekst", widget: string }
+          - { name: body, label: "Indhold", widget: markdown }
+      - name: opstaldning-da
+        label: "Opstaldning"
+        file: content/pages/opstaldning.da.md
         fields:
-          - { name: title, label: "Titel", widget: string, i18n: true }
-          - { name: subtitle, label: "Undertekst", widget: string, i18n: true, required: false }
-          - { name: body, label: "Indhold", widget: markdown, i18n: true }
-          - name: features
-            label: "Faciliteter"
-            widget: list
-            i18n: true
-            field: { name: item, label: "Facilitet", widget: string }
-
-      - name: undervisning
-        label: "Undervisning (Teaching)"
-        file: content/pages/undervisning.{{locale}}.md
-        i18n: true
+          - { name: title, label: "Titel", widget: string }
+          - { name: subtitle, label: "Undertekst", widget: string, required: false }
+          - { name: body, label: "Indhold", widget: markdown }
+      - name: undervisning-da
+        label: "Undervisning"
+        file: content/pages/undervisning.da.md
         fields:
-          - { name: title, label: "Titel", widget: string, i18n: true }
-          - { name: body, label: "Indhold", widget: markdown, i18n: true }
-
-      - name: events
+          - { name: title, label: "Titel", widget: string }
+          - { name: body, label: "Indhold", widget: markdown }
+      - name: events-da
         label: "Events"
-        file: content/pages/events.{{locale}}.md
-        i18n: true
+        file: content/pages/events.da.md
         fields:
-          - { name: title, label: "Titel", widget: string, i18n: true }
-          - { name: body, label: "Indhold", widget: markdown, i18n: true }
-
-      - name: om-os
-        label: "Om os (About)"
-        file: content/pages/om-os.{{locale}}.md
-        i18n: true
+          - { name: title, label: "Titel", widget: string }
+          - { name: body, label: "Indhold", widget: markdown }
+      - name: om-os-da
+        label: "Om os"
+        file: content/pages/om-os.da.md
         fields:
-          - { name: title, label: "Titel", widget: string, i18n: true }
-          - { name: body, label: "Indhold", widget: markdown, i18n: true }
-
-      - name: kontakt
-        label: "Kontakt (Contact)"
-        file: content/pages/kontakt.{{locale}}.md
-        i18n: true
+          - { name: title, label: "Titel", widget: string }
+          - { name: body, label: "Indhold", widget: markdown }
+      - name: kontakt-da
+        label: "Kontakt"
+        file: content/pages/kontakt.da.md
         fields:
-          - { name: title, label: "Titel", widget: string, i18n: true }
-          - { name: body, label: "Indhold", widget: markdown, i18n: true }
+          - { name: title, label: "Titel", widget: string }
+          - { name: body, label: "Indhold", widget: markdown }
 
-  # ─── HORSES ───────────────────────────────────────────────
+  # --- PAGES (English) ---
+  - name: pages-en
+    label: "Pages (English)"
+    files:
+      - name: index-en
+        label: "Home"
+        file: content/pages/index.en.md
+        fields:
+          - { name: hero_image, label: "Hero image", widget: image, required: false }
+          - { name: hero_title, label: "Title", widget: string }
+          - { name: hero_subtitle, label: "Subtitle", widget: string }
+          - { name: body, label: "Content", widget: markdown }
+      - name: opstaldning-en
+        label: "Boarding"
+        file: content/pages/opstaldning.en.md
+        fields:
+          - { name: title, label: "Title", widget: string }
+          - { name: subtitle, label: "Subtitle", widget: string, required: false }
+          - { name: body, label: "Content", widget: markdown }
+      - name: undervisning-en
+        label: "Teaching"
+        file: content/pages/undervisning.en.md
+        fields:
+          - { name: title, label: "Title", widget: string }
+          - { name: body, label: "Content", widget: markdown }
+      - name: events-en
+        label: "Events"
+        file: content/pages/events.en.md
+        fields:
+          - { name: title, label: "Title", widget: string }
+          - { name: body, label: "Content", widget: markdown }
+      - name: om-os-en
+        label: "About us"
+        file: content/pages/om-os.en.md
+        fields:
+          - { name: title, label: "Title", widget: string }
+          - { name: body, label: "Content", widget: markdown }
+      - name: kontakt-en
+        label: "Contact"
+        file: content/pages/kontakt.en.md
+        fields:
+          - { name: title, label: "Title", widget: string }
+          - { name: body, label: "Content", widget: markdown }
+
+  # --- HORSES ---
   - name: horses
     label: "Heste / Horses"
     folder: content/horses
@@ -95,12 +116,12 @@ collections:
           - { label: "Shetlandspony", value: "shetlandspony" }
           - { label: "Vallak", value: "vallak" }
       - { name: breed, label: "Race", widget: string, default: "Islandsk hest", required: false }
-      - { name: birth_year, label: "Fødselsår", widget: number, required: false }
+      - { name: birth_year, label: "Foedselsaar", widget: number, required: false }
       - { name: photo, label: "Billede", widget: image, required: false }
       - { name: facebook_url, label: "Facebook link", widget: string, required: false }
       - { name: body, label: "Beskrivelse", widget: markdown, i18n: true }
 
-  # ─── NEWS ─────────────────────────────────────────────────
+  # --- NEWS ---
   - name: news
     label: "Nyheder / News"
     folder: content/news
@@ -114,7 +135,7 @@ collections:
       - { name: excerpt, label: "Kort beskrivelse", widget: text, i18n: true, required: false }
       - { name: body, label: "Indhold", widget: markdown, i18n: true }
 
-  # ─── TESTIMONIALS ─────────────────────────────────────────
+  # --- TESTIMONIALS ---
   - name: testimonials
     label: "Anbefalinger / Testimonials"
     folder: content/testimonials
@@ -122,12 +143,12 @@ collections:
     slug: "{{name}}"
     fields:
       - { name: name, label: "Navn", widget: string }
-      - { name: role, label: "Rolle (f.eks. 'Hesteejer')", widget: string, required: false }
+      - { name: role, label: "Rolle", widget: string, required: false }
       - { name: quote, label: "Citat", widget: text }
       - { name: photo, label: "Billede", widget: image, required: false }
       - { name: date, label: "Dato", widget: datetime, required: false }
 
-  # ─── SETTINGS ─────────────────────────────────────────────
+  # --- SETTINGS ---
   - name: settings
     label: "Indstillinger / Settings"
     files:
@@ -143,4 +164,3 @@ collections:
           - { name: address, label: "Adresse", widget: text }
           - { name: instagram_url, label: "Instagram URL", widget: string, required: false }
           - { name: facebook_url, label: "Facebook URL", widget: string, required: false }
-          - { name: tikob_link, label: "Tikøb Kommune link", widget: string, default: "https://tikobkommune.dk", required: false }
