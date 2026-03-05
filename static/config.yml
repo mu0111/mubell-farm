@@ -2,7 +2,7 @@ backend:
   name: github
   repo: mu0111/mubell-farm
   branch: main
-  base_url: https://mubell-farm-oauth.murat-armbruster.workers.dev
+  base_url: https://mubell-oauth.murat-armbruster.workers.dev
 
 publish_mode: editorial_workflow
 
